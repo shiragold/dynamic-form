@@ -1,16 +1,16 @@
 import { describe, it, expect } from 'vitest'
-import { mount } from '@vue/test-utils'
+import { render } from '@testing-library/vue'
 import { createPinia } from 'pinia'
 import App from '../App.vue'
 
 describe('App', () => {
   it('renders properly', () => {
-    const wrapper = mount(App, {
+    const { getByText } = render(App, {
       global: {
         plugins: [createPinia()],
       },
     })
 
-    expect(wrapper.text()).toContain('Dynamic Form')
+    expect(getByText('Dynamic Form')).toBeTruthy()
   })
 })
