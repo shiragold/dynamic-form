@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
-import { jsonSchemaToZod } from '../json-schema-to-zod'
-import type { FieldSchema } from '../types'
+import { jsonSchemaToZod } from './json-schema-to-zod'
+import type { FieldSchema } from './types'
 
 describe('jsonSchemaToZod', () => {
   it('creates a flat schema with text and number fields', () => {
